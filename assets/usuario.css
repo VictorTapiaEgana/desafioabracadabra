@@ -1,0 +1,23 @@
+body{
+    background-color: #82272e;
+}
+
+#userForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+#campoNombre{
+    width: 200px;
+}   
+
+h1{
+    text-shadow: 1px 1px 7px  black;
+}
+
+#mensajeError{
+    color: white;
+    font-weight: 600;
+}
