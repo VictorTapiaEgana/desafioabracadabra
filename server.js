@@ -1,15 +1,16 @@
 const express =  require('express');
 const app = express();
+const path = require('path');
 const usuarios = require('./usuarios.json')
 
-app.use(express.static("assets"));
+app.use(express.static(path.join(process.cwd(), "assets")));
 
 app.get('/abracadabra/usuarios',(req,res)=>{
     res.json(usuarios)
 });
 
 app.get('/',(req,res)=>{
-    res.sendFile('/usuario.html')
+    res.sendFile(path.join(process.cwd(), 'usuario.html'));
 })
 
 app.use('/abracadabra/juego/:usuario',(req,res,next)=>{
@@ -20,12 +21,12 @@ app.use('/abracadabra/juego/:usuario',(req,res,next)=>{
 
     filtro != undefined 
     ? next () 
-    : res.sendFile('/errorusuario.html')   
+    : res.sendFile(path.join(process.cwd(), 'errorusuario.html'));   
 
 });
 
 app.get('/abracadabra/juego/:usuario', (req, res) => {              
-    res.sendFile('/index.html')    
+    res.sendFile(path.join(process.cwd(), 'index.html'));    
 });
 
 app.get('/abracadabra/conejo/:numero',(req,res)=>{
@@ -34,8 +35,8 @@ app.get('/abracadabra/conejo/:numero',(req,res)=>{
        const Aleatorio = Math.floor(Math.random() * 4) + 1;
        
        SombreroElejido == Aleatorio 
-       ? res.sendFile('/ganador.html')
-       : res.sendFile('/perdiste.html');
+       ? res.sendFile(path.join(process.cwd(),'/ganador.html'))
+       : res.sendFile(path.join(process.cwd(),'/perdiste.html'));
 
 });
 
