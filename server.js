@@ -4,6 +4,7 @@ const path = require('path');
 const usuarios = require('./usuarios.json')
 
 // app.use(express.static(path.join(process.cwd(), "/assets")));
+const port = process.env.PORT || 3001;
 
 app.use('/static', express.static(__dirname + '/assets'));
 
@@ -46,6 +47,6 @@ app.get("*",(req,res)=>{
     res.send(`<h1>“Esta página no existe 😥"</h1>`);
 });
 
-app.listen(3000,()=>{
-    console.log(`Holiwis en Puerto 3000`)
+app.listen(port,()=>{
+    console.log(`Holiwis en Puerto ${port}`)
 });
