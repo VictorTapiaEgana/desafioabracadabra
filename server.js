@@ -9,7 +9,7 @@ app.get('/abracadabra/usuarios',(req,res)=>{
 });
 
 app.get('/',(req,res)=>{
-    res.sendFile(__dirname + '/usuario.html')
+    res.sendFile('/usuario.html')
 })
 
 app.use('/abracadabra/juego/:usuario',(req,res,next)=>{
@@ -20,12 +20,12 @@ app.use('/abracadabra/juego/:usuario',(req,res,next)=>{
 
     filtro != undefined 
     ? next () 
-    : res.sendFile(__dirname + '/errorusuario.html')   
+    : res.sendFile('/errorusuario.html')   
 
 });
 
 app.get('/abracadabra/juego/:usuario', (req, res) => {              
-    res.sendFile(__dirname + '/index.html')    
+    res.sendFile('/index.html')    
 });
 
 app.get('/abracadabra/conejo/:numero',(req,res)=>{
@@ -34,8 +34,8 @@ app.get('/abracadabra/conejo/:numero',(req,res)=>{
        const Aleatorio = Math.floor(Math.random() * 4) + 1;
        
        SombreroElejido == Aleatorio 
-       ? res.sendFile(__dirname + '/ganador.html')
-       : res.sendFile(__dirname + '/perdiste.html');
+       ? res.sendFile('/ganador.html')
+       : res.sendFile('/perdiste.html');
 
 });
 
