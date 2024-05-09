@@ -3,7 +3,9 @@ const app = express();
 const path = require('path');
 const usuarios = require('./usuarios.json')
 
-app.use(express.static(path.join(process.cwd(), "assets")));
+app.use(express.static(path.join(process.cwd(), "/assets")));
+
+app.use('/static', express.static(__dirname + '/assets'));
 
 app.get('/abracadabra/usuarios',(req,res)=>{
     res.json(usuarios)
