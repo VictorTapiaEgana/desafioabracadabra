@@ -13,7 +13,7 @@ app.get('/abracadabra/usuarios',(req,res)=>{
 });
 
 app.get('/',(req,res)=>{
-    res.sendFile(path.join(process.cwd(), 'usuario.html'));
+    res.sendFile(path.join(process.cwd(), '/usuario.html'));
 })
 
 app.use('/abracadabra/juego/:usuario',(req,res,next)=>{
@@ -24,12 +24,12 @@ app.use('/abracadabra/juego/:usuario',(req,res,next)=>{
 
     filtro != undefined 
     ? next () 
-    : res.sendFile(path.join(process.cwd(), 'errorusuario.html'));   
+    : res.sendFile(path.join(process.cwd(), '/errorusuario.html'));   
 
 });
 
 app.get('/abracadabra/juego/:usuario', (req, res) => {              
-    res.sendFile(path.join(process.cwd(), 'index.html'));    
+    res.sendFile(path.join(process.cwd(), '/index.html'));    
 });
 
 app.get('/abracadabra/conejo/:numero',(req,res)=>{
